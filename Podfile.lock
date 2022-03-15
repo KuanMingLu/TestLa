@@ -1,0 +1,43 @@
+PODS:
+  - IPaAVPlayer (3.0)
+  - IPaKeyChain (2.2)
+  - IPaLog (3.0)
+  - IPaSecurity (4.0):
+    - IPaLog (~> 3.0)
+  - IPaStoryboardSegues (2.9)
+  - IPaURLResourceUI (5.2):
+    - IPaLog
+    - IPaXMLSection (~> 2.0)
+  - IPaXMLSection (2.0):
+    - IPaLog
+
+DEPENDENCIES:
+  - IPaAVPlayer
+  - IPaKeyChain
+  - IPaLog
+  - IPaSecurity
+  - IPaStoryboardSegues
+  - IPaURLResourceUI
+
+SPEC REPOS:
+  https://github.com/ipapamagic/IPaPods.git:
+    - IPaAVPlayer
+    - IPaKeyChain
+    - IPaLog
+    - IPaSecurity
+    - IPaStoryboardSegues
+    - IPaURLResourceUI
+    - IPaXMLSection
+
+SPEC CHECKSUMS:
+  IPaAVPlayer: 85ed892dc42184848f450ce3a85ee413883f3b52
+  IPaKeyChain: 51a4ff43db6d24236ed81cc5c86ac5a4cce2d82f
+  IPaLog: cf733c32ff559566db380a838a240775bf0867b6
+  IPaSecurity: 7c20aaafecf3025e02698996ace6f0d5e461b230
+  IPaStoryboardSegues: 963a172398cc22f7058ac09a04c9cc8a809f5d46
+  IPaURLResourceUI: 9f34be78604ee35b0d694ad41c0a28ede5ca7dc6
+  IPaXMLSection: 0ab0305f5cd3ab1222f53c830db29c8299f41950
+
+PODFILE CHECKSUM: a3cf5494f38a2d35e875131147ff297c83671906
+
+COCOAPODS: 1.11.2
