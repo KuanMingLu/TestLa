@@ -35,12 +35,12 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         if let url = Bundle.main.url(forResource: "bg", withExtension: "mov") {
             let player = IPaAVPlayer()
-            player.playUrl = url
+            player.setPlayingUrl(url)
             player.isLoop = true
             self.videoView.avPlayer = player
             self.videoView.videoGravity = .resizeAspectFill
             player.play()
-            self.videoView.delegate = self
+            
             
         }
         self.lockedSwitch.delegate = self
@@ -135,6 +135,7 @@ class HomeViewController: UIViewController {
             let numberFormatter = NumberFormatter()
             numberFormatter.minimumFractionDigits = 0
             numberFormatter.maximumFractionDigits = 0
+            let formatter = MeasurementFormatter()
             formatter.numberFormatter = numberFormatter
             
             let outsideTempMeasurement = Measurement(value: outsideTemp, unit: UnitTemperature.celsius)
@@ -173,7 +174,7 @@ class HomeViewController: UIViewController {
                 }
             }
             let vehicle_state = vehicleData["vehicle_state"] as? [String:Any] ?? [String:Any]()
-            let locked:Bool = vehicle_state["locked"] as? Bool ?? false
+             let locked:Bool = vehicle_state["locked"] as? Bool ?? false
             self.lockedSwitch.isOn = !locked
             
             let is_climate_on = climate_state ["is_climate_on"] as? Bool ?? false
@@ -192,22 +193,6 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController : IPaAVPlayerViewDelegate {
-    func onCurrentTimeUpdate(_ view: IPaAVPlayerView, currentTime: TimeInterval) {
-        
-    }
-    
-    func onTimeControlStatus(_ view: IPaAVPlayerView, status: AVPlayer.TimeControlStatus?) {
-        
-    }
-    
-    func onFinishPlay(_ view: IPaAVPlayerView) {
-        view.avPlayer?.seekToTime(0)
-        view.avPlayer?.play()
-    }
-    
-    
-}
 extension HomeViewController: ScrollSwitchDelegate {
     func onIsOnUpdate(_ sender: ScrollSwitch) {
         guard let vehicleId = self.currentVehicleId else {

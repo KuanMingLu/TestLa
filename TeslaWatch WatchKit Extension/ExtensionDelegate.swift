@@ -6,11 +6,25 @@
 //
 
 import WatchKit
+import WatchConnectivity
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
-
+    
+    override init() {
+        super.init()
+        WCSession.default.delegate = self
+        WCSession.default.activate()
+        
+        
+    }
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
+        
+        if !APIManager.shared.isLogin {
+            WKInterfaceController.reloadRootPageControllers(withNames: ["requestToken"], contexts: nil, orientation: .horizontal, pageIndex: 0)
+        }
+        
+        
     }
 
     func applicationDidBecomeActive() {
@@ -52,4 +66,26 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         }
     }
 
+}
+extension ExtensionDelegate :WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+        if activationState == .activated {
+            if !APIManager.shared.isLogin {
+                session.sendMessage([MessageAttribute.commandId.rawValue:CommandType.requestToken.rawValue]) { response in
+                    print("response:\(response)")
+                } errorHandler: { error in
+                    print("error:\(error)")
+                }
+
+            }
+            
+            
+        }
+        
+        
+        
+    }
+    
+    
 }

@@ -16,6 +16,8 @@ struct LoginInfo {
     let codeVerifier:String
     let loginUrl:URL
 }
+
+
 class APIManager: NSObject {
     enum ApiCommand:String {
         case lockDoor = "door_lock"
@@ -28,9 +30,10 @@ class APIManager: NSObject {
     static let shared = APIManager()
     lazy var resourceUI = IPaURLResourceUI(with: URL(string: "https://owner-api.teslamotors.com")!, delegate: self)
     lazy var authResourceUI = IPaURLResourceUI(with: URL(string: "https://auth.tesla.com/oauth2/v3")!, delegate: nil)
-    lazy var token:IPaKeyChainToken = IPaKeyChainToken(self.appServiceName,name:"token")
+    lazy var token:IPaKeyChainToken = IPaKeyChainToken(self.appServiceName,name:"token",synchronizable: true)
     var appServiceName:String {
         get {
+            
             return (Bundle.main.bundleIdentifier ?? "")
         }
     }
@@ -39,6 +42,7 @@ class APIManager: NSObject {
             return self.token.token != nil
         }
     }
+
     func createLoginInfo() -> LoginInfo? {
         let length = 86
         let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"

@@ -59,7 +59,6 @@ extension LoginViewController : WKNavigationDelegate {
             return .cancel
         }
         
-        
         return .allow
     }
     

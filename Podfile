@@ -16,4 +16,15 @@ target 'Tesla' do
   pod 'IPaStoryboardSegues'
   pod 'IPaSecurity'
   pod 'IPaLog'
+  
+end
+
+
+target 'TeslaWatch WatchKit Extension' do
+  use_frameworks!
+  platform :watchos, '6.0'
+  pod 'IPaURLResourceUI'
+  pod 'IPaKeyChain'
+  pod 'IPaSecurity'
+  
 end

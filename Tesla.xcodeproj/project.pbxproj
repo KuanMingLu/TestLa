@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0181C127E95C9800A64D35 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E251F83271E5B1C00CEED84 /* APIManager.swift */; };
+		0E0181C327E9606200A64D35 /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0181C227E9606200A64D35 /* CommandManager.swift */; };
+		0E0181C427E9606200A64D35 /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0181C227E9606200A64D35 /* CommandManager.swift */; };
 		0E145E5D27682D0B00623B67 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E145E5B27682D0B00623B67 /* Interface.storyboard */; };
 		0E145E5F27682D0D00623B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E145E5E27682D0D00623B67 /* Assets.xcassets */; };
 		0E145E6527682D0D00623B67 /* TeslaWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0E145E6427682D0D00623B67 /* TeslaWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -20,14 +23,15 @@
 		0E251F84271E5B1C00CEED84 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E251F83271E5B1C00CEED84 /* APIManager.swift */; };
 		0E2A3A152717BB9300548016 /* bg.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2A3A142717BB9300548016 /* bg.mov */; };
 		0E2A3A172717BC7100548016 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A3A162717BC7100548016 /* HomeViewController.swift */; };
-		0E60627827D0559B00E4845D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E251F83271E5B1C00CEED84 /* APIManager.swift */; };
 		0EB0CB1226F969350078D500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0CB1126F969350078D500 /* AppDelegate.swift */; };
 		0EB0CB1426F969350078D500 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0CB1326F969350078D500 /* SceneDelegate.swift */; };
 		0EB0CB1626F969350078D500 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0CB1526F969350078D500 /* LoginViewController.swift */; };
 		0EB0CB1926F969350078D500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0CB1726F969350078D500 /* Main.storyboard */; };
 		0EB0CB1B26F969370078D500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0CB1A26F969370078D500 /* Assets.xcassets */; };
 		0EB0CB1E26F969370078D500 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0CB1C26F969370078D500 /* LaunchScreen.storyboard */; };
+		0EFA8DF627F2970600A0D2C5 /* RequestTokenInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA8DF527F2970600A0D2C5 /* RequestTokenInterfaceController.swift */; };
 		77BB51C4371166219C31A7A6 /* Pods_Tesla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9DA24EF6DA5DC6C76DC20C /* Pods_Tesla.framework */; };
+		BB6254D40510E467F0FB1F11 /* Pods_TeslaWatch_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB4CA26920E329F4F314A9E /* Pods_TeslaWatch_WatchKit_Extension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E0181C227E9606200A64D35 /* CommandManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandManager.swift; sourceTree = "<group>"; };
 		0E145E5927682D0B00623B67 /* TeslaWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeslaWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E145E5C27682D0B00623B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		0E145E5E27682D0D00623B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,9 +101,13 @@
 		0EB0CB1A26F969370078D500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EB0CB1D26F969370078D500 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EB0CB1F26F969370078D500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EFA8DF527F2970600A0D2C5 /* RequestTokenInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTokenInterfaceController.swift; sourceTree = "<group>"; };
 		2F9DA24EF6DA5DC6C76DC20C /* Pods_Tesla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tesla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B68126C746EAFA9FE46A8D /* Pods-Tesla.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tesla.release.xcconfig"; path = "Target Support Files/Pods-Tesla/Pods-Tesla.release.xcconfig"; sourceTree = "<group>"; };
 		745F692C5ADD418DD4F9D609 /* Pods-Tesla.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tesla.debug.xcconfig"; path = "Target Support Files/Pods-Tesla/Pods-Tesla.debug.xcconfig"; sourceTree = "<group>"; };
+		971540EB0F46057CB6AF7334 /* Pods-TeslaWatch WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeslaWatch WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-TeslaWatch WatchKit Extension/Pods-TeslaWatch WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		BEB4CA26920E329F4F314A9E /* Pods_TeslaWatch_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeslaWatch_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9D8914C2CA1B07525E24333 /* Pods-TeslaWatch WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeslaWatch WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-TeslaWatch WatchKit Extension/Pods-TeslaWatch WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB6254D40510E467F0FB1F11 /* Pods_TeslaWatch_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +127,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F9187305F6A9A97289BE42B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -125,6 +142,8 @@
 			children = (
 				745F692C5ADD418DD4F9D609 /* Pods-Tesla.debug.xcconfig */,
 				53B68126C746EAFA9FE46A8D /* Pods-Tesla.release.xcconfig */,
+				D9D8914C2CA1B07525E24333 /* Pods-TeslaWatch WatchKit Extension.debug.xcconfig */,
+				971540EB0F46057CB6AF7334 /* Pods-TeslaWatch WatchKit Extension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -142,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				0E145E6927682D0D00623B67 /* InterfaceController.swift */,
+				0EFA8DF527F2970600A0D2C5 /* RequestTokenInterfaceController.swift */,
 				0E145E6B27682D0D00623B67 /* ExtensionDelegate.swift */,
 				0E145E6D27682D0D00623B67 /* NotificationController.swift */,
 				0E145E6F27682D0D00623B67 /* ComplicationController.swift */,
@@ -156,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				0E251F83271E5B1C00CEED84 /* APIManager.swift */,
+				0E0181C227E9606200A64D35 /* CommandManager.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -204,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				2F9DA24EF6DA5DC6C76DC20C /* Pods_Tesla.framework */,
+				BEB4CA26920E329F4F314A9E /* Pods_TeslaWatch_WatchKit_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -217,6 +239,7 @@
 			buildPhases = (
 				0E145E5727682D0B00623B67 /* Resources */,
 				0E145E7B27682D0F00623B67 /* Embed App Extensions */,
+				F9187305F6A9A97289BE42B2 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,9 +255,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E145E7827682D0F00623B67 /* Build configuration list for PBXNativeTarget "TeslaWatch WatchKit Extension" */;
 			buildPhases = (
+				0D58E86AA355995D396BF17A /* [CP] Check Pods Manifest.lock */,
 				0E145E6027682D0D00623B67 /* Sources */,
 				0E145E6127682D0D00623B67 /* Frameworks */,
 				0E145E6227682D0D00623B67 /* Resources */,
+				9CC2F4B484201C40C18AAF4C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,8 +278,8 @@
 				0EB0CB0A26F969350078D500 /* Sources */,
 				0EB0CB0B26F969350078D500 /* Frameworks */,
 				0EB0CB0C26F969350078D500 /* Resources */,
-				EFD902A18F4331875B71C06D /* [CP] Embed Pods Frameworks */,
 				0E145E7F27682D0F00623B67 /* Embed Watch Content */,
+				970351AD8CE7CFD31A48E897 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -338,6 +363,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0D58E86AA355995D396BF17A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TeslaWatch WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		970351AD8CE7CFD31A48E897 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tesla/Pods-Tesla-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tesla/Pods-Tesla-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tesla/Pods-Tesla-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CC2F4B484201C40C18AAF4C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TeslaWatch WatchKit Extension/Pods-TeslaWatch WatchKit Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TeslaWatch WatchKit Extension/Pods-TeslaWatch WatchKit Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TeslaWatch WatchKit Extension/Pods-TeslaWatch WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C4B69C2DE6237AF5DA7A0F98 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,23 +441,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EFD902A18F4331875B71C06D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Tesla/Pods-Tesla-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Tesla/Pods-Tesla-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tesla/Pods-Tesla-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -385,8 +449,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E145E6E27682D0D00623B67 /* NotificationController.swift in Sources */,
+				0E0181C427E9606200A64D35 /* CommandManager.swift in Sources */,
 				0E145E7027682D0D00623B67 /* ComplicationController.swift in Sources */,
-				0E60627827D0559B00E4845D /* APIManager.swift in Sources */,
+				0E0181C127E95C9800A64D35 /* APIManager.swift in Sources */,
+				0EFA8DF627F2970600A0D2C5 /* RequestTokenInterfaceController.swift in Sources */,
 				0E145E6C27682D0D00623B67 /* ExtensionDelegate.swift in Sources */,
 				0E145E6A27682D0D00623B67 /* InterfaceController.swift in Sources */,
 			);
@@ -402,6 +468,7 @@
 				0EB0CB1226F969350078D500 /* AppDelegate.swift in Sources */,
 				0E1D881C27054CD70061CB8B /* ScrollSwitch.swift in Sources */,
 				0EB0CB1426F969350078D500 /* SceneDelegate.swift in Sources */,
+				0E0181C327E9606200A64D35 /* CommandManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +517,7 @@
 /* Begin XCBuildConfiguration section */
 		0E145E7927682D0F00623B67 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9D8914C2CA1B07525E24333 /* Pods-TeslaWatch WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -481,6 +549,7 @@
 		};
 		0E145E7A27682D0F00623B67 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 971540EB0F46057CB6AF7334 /* Pods-TeslaWatch WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
