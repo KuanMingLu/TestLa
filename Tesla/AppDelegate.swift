@@ -8,14 +8,47 @@
 import UIKit
 
 import WatchConnectivity
-
+import Combine
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    var commandAnyCancellable:AnyCancellable?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let notificationCenter = NotificationCenter.default
+        let publisher = notificationCenter.publisher(for: CommandManager.CommandNotificationName,object: CommandManager.shared)
+//        self.commandAnyCancellable = publisher.sink(receiveValue: { notification in
+//            guard let userInfo = notification.userInfo,let commandId = userInfo[MessageAttribute.commandId] as? CommandType,let message = userInfo[MessageAttribute.message] as? [String:Any] else {
+//                return
+//            }
+//
+//
+//            if commandId == .requestToken {
+//                ....
+//            }
+//
+//        })
+//
+        self.commandAnyCancellable = publisher.compactMap({ (notification) -> (CommandType,[String:Any])? in
+            //
+            guard let userInfo = notification.userInfo,let commandId = userInfo[MessageAttribute.commandId] as? CommandType,let message = userInfo[MessageAttribute.message] as? [String:Any] else {
+                return nil
+            }
+            return (commandId,message)
+        
+        }).sink(receiveValue: { (commandId,message) in
+            
+            switch commandId {
+            case .requestToken:
+                if let token = APIManager.shared.token.token {
+                    CommandManager.shared.sendMessage(.sendToken, message: ["token":token])
+                }
+            case .sendToken:
+                break
+            }
+        })
+    
         WCSession.default.delegate = self
         WCSession.default.activate()
         
@@ -54,5 +87,6 @@ extension AppDelegate:WCSessionDelegate
     }
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         print("Message:\(message)")
+        CommandManager.shared.handle(message)
     }
 }

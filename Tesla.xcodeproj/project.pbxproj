@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0E0181C127E95C9800A64D35 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E251F83271E5B1C00CEED84 /* APIManager.swift */; };
-		0E0181C327E9606200A64D35 /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0181C227E9606200A64D35 /* CommandManager.swift */; };
 		0E0181C427E9606200A64D35 /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0181C227E9606200A64D35 /* CommandManager.swift */; };
 		0E145E5D27682D0B00623B67 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E145E5B27682D0B00623B67 /* Interface.storyboard */; };
 		0E145E5F27682D0D00623B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E145E5E27682D0D00623B67 /* Assets.xcassets */; };
@@ -23,6 +22,7 @@
 		0E251F84271E5B1C00CEED84 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E251F83271E5B1C00CEED84 /* APIManager.swift */; };
 		0E2A3A152717BB9300548016 /* bg.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0E2A3A142717BB9300548016 /* bg.mov */; };
 		0E2A3A172717BC7100548016 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A3A162717BC7100548016 /* HomeViewController.swift */; };
+		0E5686CE2829F75C0075B9AE /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0181C227E9606200A64D35 /* CommandManager.swift */; };
 		0EB0CB1226F969350078D500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0CB1126F969350078D500 /* AppDelegate.swift */; };
 		0EB0CB1426F969350078D500 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0CB1326F969350078D500 /* SceneDelegate.swift */; };
 		0EB0CB1626F969350078D500 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0CB1526F969350078D500 /* LoginViewController.swift */; };
@@ -468,7 +468,7 @@
 				0EB0CB1226F969350078D500 /* AppDelegate.swift in Sources */,
 				0E1D881C27054CD70061CB8B /* ScrollSwitch.swift in Sources */,
 				0EB0CB1426F969350078D500 /* SceneDelegate.swift in Sources */,
-				0E0181C327E9606200A64D35 /* CommandManager.swift in Sources */,
+				0E5686CE2829F75C0075B9AE /* CommandManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

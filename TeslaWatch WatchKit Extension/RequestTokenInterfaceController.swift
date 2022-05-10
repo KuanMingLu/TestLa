@@ -27,7 +27,7 @@ class RequestTokenInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     @IBAction func onRequestToken() {
-        
+        CommandManager.shared.sendMessage(.requestToken)
     }
     
 }

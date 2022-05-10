@@ -86,6 +86,8 @@ extension ExtensionDelegate :WCSessionDelegate {
         
         
     }
-    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        CommandManager.shared.handle(message)
+    }
     
 }
