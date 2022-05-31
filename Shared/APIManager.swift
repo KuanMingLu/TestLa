@@ -12,6 +12,7 @@ import IPaXMLSection
 import libxml2
 import IPaLog
 import AVFoundation
+
 struct LoginInfo {
     let codeVerifier:String
     let loginUrl:URL
@@ -37,7 +38,7 @@ class APIManager: NSObject {
             return (Bundle.main.bundleIdentifier ?? "")
         }
     }
-    var isLogin:Bool {
+    @objc dynamic var isLogin:Bool {
         get {
             return self.token.token != nil
         }

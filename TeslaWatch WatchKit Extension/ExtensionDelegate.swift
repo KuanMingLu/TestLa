@@ -7,11 +7,34 @@
 
 import WatchKit
 import WatchConnectivity
-
+import Combine
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
-    
+    var commandAnyCancellable:AnyCancellable?
     override init() {
         super.init()
+        let notificationCenter = NotificationCenter.default
+        let publisher = notificationCenter.publisher(for: CommandManager.CommandNotificationName,object: CommandManager.shared)
+        self.commandAnyCancellable = publisher.compactMap({ (notification) -> (CommandType,[String:Any])? in
+            //
+            guard let userInfo = notification.userInfo,let commandId = userInfo[MessageAttribute.commandId] as? CommandType,let message = userInfo[MessageAttribute.message] as? [String:Any] else {
+                return nil
+            }
+            return (commandId,message)
+        
+        }).sink(receiveValue: { (commandId,message) in
+            
+            switch commandId {
+            case .requestToken:
+                break
+            case .sendToken:
+                guard let token = message["token"] as? String,token.count > 0 else {
+                    break
+                }
+                APIManager.shared.token.token = token
+                WKInterfaceController.reloadRootPageControllers(withNames: ["home"], contexts: nil, orientation: .horizontal, pageIndex: 0)
+                
+            }
+        })
         WCSession.default.delegate = self
         WCSession.default.activate()
         

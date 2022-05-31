@@ -23,30 +23,38 @@
             </objects>
             <point key="canvasLocation" x="174.43478260869566" y="-340"/>
         </scene>
-        <!--Interface Controller-->
+        <!--home-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TeslaWatch_WatchKit_Extension">
+                <controller identifier="home" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TeslaWatch_WatchKit_Extension">
                     <items>
                         <switch width="1" height="83" alignment="left" value="YES" title="解鎖" id="bfZ-rT-UlB">
                             <fontDescription key="font" type="system" pointSize="38"/>
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="onLock:" destination="AgC-eL-Hgc" id="ZeD-Tm-0WZ"/>
+                            </connections>
                         </switch>
                         <switch width="1" height="83" alignment="left" value="YES" title="後車廂" id="5ip-e4-Msi">
                             <fontDescription key="font" type="system" pointSize="38"/>
+                            <connections>
+                                <action selector="BackDoorSwitch:" destination="AgC-eL-Hgc" id="A6n-A4-L0l"/>
+                            </connections>
                         </switch>
                     </items>
                     <connections>
+                        <outlet property="backDoorSwitch" destination="5ip-e4-Msi" id="uTQ-8p-XIk"/>
+                        <outlet property="lockSwitch" destination="bfZ-rT-UlB" id="JjK-Uk-fok"/>
                         <segue destination="zi7-Vd-fXH" kind="relationship" relationship="nextPage" id="Y57-qG-xLq"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="192.91304347826085" y="-71.339285714285708"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Interface2 Controller-->
         <scene sceneID="gme-Uj-ota">
             <objects>
-                <controller id="zi7-Vd-fXH">
+                <controller id="zi7-Vd-fXH" customClass="Interface2Controller" customModule="TeslaWatch_WatchKit_Extension">
                     <items>
                         <switch width="1" height="83" alignment="left" value="YES" title="冷氣" id="Rer-Kn-xH8">
                             <fontDescription key="font" type="system" pointSize="38"/>
@@ -57,6 +65,10 @@
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </switch>
                     </items>
+                    <connections>
+                        <outlet property="AirconSwitch" destination="Rer-Kn-xH8" id="r2W-SZ-Fvn"/>
+                        <outlet property="FrontDoorSwitch" destination="p44-YN-Hfq" id="HmF-gV-Sgs"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="513" y="-73"/>

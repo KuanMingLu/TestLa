@@ -29,6 +29,7 @@
 		0EB0CB1926F969350078D500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0CB1726F969350078D500 /* Main.storyboard */; };
 		0EB0CB1B26F969370078D500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0CB1A26F969370078D500 /* Assets.xcassets */; };
 		0EB0CB1E26F969370078D500 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0CB1C26F969370078D500 /* LaunchScreen.storyboard */; };
+		0EEC32A52845AC2F00C5867E /* Interface2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC32A42845AC2F00C5867E /* Interface2Controller.swift */; };
 		0EFA8DF627F2970600A0D2C5 /* RequestTokenInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFA8DF527F2970600A0D2C5 /* RequestTokenInterfaceController.swift */; };
 		77BB51C4371166219C31A7A6 /* Pods_Tesla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9DA24EF6DA5DC6C76DC20C /* Pods_Tesla.framework */; };
 		BB6254D40510E467F0FB1F11 /* Pods_TeslaWatch_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB4CA26920E329F4F314A9E /* Pods_TeslaWatch_WatchKit_Extension.framework */; };
@@ -101,6 +102,7 @@
 		0EB0CB1A26F969370078D500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EB0CB1D26F969370078D500 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EB0CB1F26F969370078D500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EEC32A42845AC2F00C5867E /* Interface2Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface2Controller.swift; sourceTree = "<group>"; };
 		0EFA8DF527F2970600A0D2C5 /* RequestTokenInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTokenInterfaceController.swift; sourceTree = "<group>"; };
 		2F9DA24EF6DA5DC6C76DC20C /* Pods_Tesla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tesla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B68126C746EAFA9FE46A8D /* Pods-Tesla.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tesla.release.xcconfig"; path = "Target Support Files/Pods-Tesla/Pods-Tesla.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				0E145E6927682D0D00623B67 /* InterfaceController.swift */,
+				0EEC32A42845AC2F00C5867E /* Interface2Controller.swift */,
 				0EFA8DF527F2970600A0D2C5 /* RequestTokenInterfaceController.swift */,
 				0E145E6B27682D0D00623B67 /* ExtensionDelegate.swift */,
 				0E145E6D27682D0D00623B67 /* NotificationController.swift */,
@@ -452,6 +455,7 @@
 				0E0181C427E9606200A64D35 /* CommandManager.swift in Sources */,
 				0E145E7027682D0D00623B67 /* ComplicationController.swift in Sources */,
 				0E0181C127E95C9800A64D35 /* APIManager.swift in Sources */,
+				0EEC32A52845AC2F00C5867E /* Interface2Controller.swift in Sources */,
 				0EFA8DF627F2970600A0D2C5 /* RequestTokenInterfaceController.swift in Sources */,
 				0E145E6C27682D0D00623B67 /* ExtensionDelegate.swift in Sources */,
 				0E145E6A27682D0D00623B67 /* InterfaceController.swift in Sources */,
