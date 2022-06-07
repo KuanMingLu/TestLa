@@ -7,14 +7,33 @@
 
 import WatchKit
 import Foundation
-
+import Combine
 
 class InterfaceController: WKInterfaceController {
     let updateStatusTime:TimeInterval = 6
     @IBOutlet weak var lockSwitch: WKInterfaceSwitch!
     @IBOutlet weak var backDoorSwitch: WKInterfaceSwitch!
-    var currentVehicleId:Int?
-    var currentVehicleData = [String:Any]()
+    var currentVehicleId:Int? {
+        get {
+            return APIManager.shared.currentVehicleId
+        }
+        set {
+            APIManager.shared.currentVehicleId = newValue
+        }
+        
+        
+    }
+    var vehicleDataAnyCancellable:AnyCancellable?
+    
+    
+    var currentVehicleData:[String:Any] {
+        get {
+            return APIManager.shared.currentVehicleData
+        }
+        set {
+            APIManager.shared.currentVehicleData = newValue
+        }
+    }
     var updateStatusTimer:Timer?
     var lastUpdateTime:TimeInterval = 0
     var lastUpdateLabelTimer:Timer?
@@ -26,7 +45,16 @@ class InterfaceController: WKInterfaceController {
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        
+        self.vehicleDataAnyCancellable = APIManager.shared.publisher(for: \.currentVehicleData).sink(receiveValue: { vehicleData in
+            
+            let vehicle_state = vehicleData["vehicle_state"] as? [String:Any] ?? [String:Any]()
+            let locked:Bool = vehicle_state["locked"] as? Bool ?? false
+            
+            self.lockSwitch.setOn(!locked)
+            let rt = vehicle_state["rt"] as? Int ?? 0
+            self.backDoorSwitch.setOn(rt != 0)
+            
+        })
         
         guard let _ = self.currentVehicleId else {
             APIManager.shared.apiVehicles { vehicles in
@@ -56,13 +84,7 @@ class InterfaceController: WKInterfaceController {
             
             self.currentVehicleData = vehicleData
         
-            
-            let vehicle_state = vehicleData["vehicle_state"] as? [String:Any] ?? [String:Any]()
-            let locked:Bool = vehicle_state["locked"] as? Bool ?? false
-            
-            self.lockSwitch.setOn(!locked)
-            let rt = vehicle_state["rt"] as? Int ?? 0
-            self.backDoorSwitch.setOn(rt != 0)
+           
             
             self.lastUpdateTime = Date().timeIntervalSince1970
         }

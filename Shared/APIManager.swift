@@ -29,6 +29,8 @@ class APIManager: NSObject {
         
     }
     static let shared = APIManager()
+    var currentVehicleId:Int?
+    @objc dynamic var currentVehicleData = [String:Any]()
     lazy var resourceUI = IPaURLResourceUI(with: URL(string: "https://owner-api.teslamotors.com")!, delegate: self)
     lazy var authResourceUI = IPaURLResourceUI(with: URL(string: "https://auth.tesla.com/oauth2/v3")!, delegate: nil)
     lazy var token:IPaKeyChainToken = IPaKeyChainToken(self.appServiceName,name:"token",synchronizable: true)

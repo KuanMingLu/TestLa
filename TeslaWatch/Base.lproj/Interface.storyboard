@@ -59,15 +59,21 @@
                         <switch width="1" height="83" alignment="left" value="YES" title="冷氣" id="Rer-Kn-xH8">
                             <fontDescription key="font" type="system" pointSize="38"/>
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="AirconSwitch:" destination="zi7-Vd-fXH" id="zVA-p3-mXd"/>
+                            </connections>
                         </switch>
-                        <switch width="1" height="83" alignment="left" value="YES" title="前車廂" id="p44-YN-Hfq">
+                        <switch width="1" height="83" alignment="left" value="YES" title="啟動" id="p44-YN-Hfq">
                             <fontDescription key="font" type="system" pointSize="38"/>
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="PowerSwitch:" destination="zi7-Vd-fXH" id="Pw6-DR-llf"/>
+                            </connections>
                         </switch>
                     </items>
                     <connections>
                         <outlet property="AirconSwitch" destination="Rer-Kn-xH8" id="r2W-SZ-Fvn"/>
-                        <outlet property="FrontDoorSwitch" destination="p44-YN-Hfq" id="HmF-gV-Sgs"/>
+                        <outlet property="powerswitch" destination="p44-YN-Hfq" id="6OQ-We-gzA"/>
                     </connections>
                 </controller>
             </objects>
