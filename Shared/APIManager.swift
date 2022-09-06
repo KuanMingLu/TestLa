@@ -128,6 +128,27 @@ class APIManager: NSObject {
             
         }
     }
+    func apiGetVehicleChargeState(_ complete:@escaping ([String:Any]?)->()) {
+        guard let vehicleId = self.currentVehicleId else {
+            APIManager.shared.apiVehicles { vehicles in
+                guard let data = vehicles.first, let vehicleId = data["id"] as? Int else {
+                    //can not get vehicle data
+                    complete(nil)
+                    return
+                }
+                self.currentVehicleId = vehicleId
+                self.apiGetVehicleChargeState(complete)
+                
+            }
+            return
+        }
+        self.apiGetVehicleData(vehicleId, complete: {
+            vehicleData in
+            let chargeState = vehicleData["charge_state"] as? [String:Any]
+            complete(chargeState)
+            
+        })
+    }
     
 }
 

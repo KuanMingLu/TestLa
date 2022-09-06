@@ -14,7 +14,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         let descriptors = [
-            CLKComplicationDescriptor(identifier: "complication", displayName: "Tesla", supportedFamilies: CLKComplicationFamily.allCases)
+            CLKComplicationDescriptor(identifier: "complication", displayName: "Tesla", supportedFamilies: [.utilitarianSmallFlat,.utilitarianLarge,.utilitarianSmall])
             // Multiple complication support can be added here with more descriptors
         ]
         
@@ -39,10 +39,46 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
 
     // MARK: - Timeline Population
-    
+    fileprivate func _getCurrentTimelineEntry(for complication: CLKComplication, textProvider:CLKTextProvider,handler:@escaping (CLKComplicationTimelineEntry?) -> Void) {
+        
+        var entry:CLKComplicationTimelineEntry?
+        
+        var template:CLKComplicationTemplate? = nil
+        switch complication.family {
+        case .utilitarianSmallFlat,.utilitarianSmall:
+            template = CLKComplicationTemplateUtilitarianSmallFlat(textProvider: textProvider)
+        case .utilitarianLarge:
+            template = CLKComplicationTemplateUtilitarianLargeFlat(textProvider: textProvider)
+        default:
+            break
+        }
+        if let template = template {
+            entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+        }
+//        let entry = CLKComplicationTemplateUtilitarianLargeFlat
+        handler(entry)
+    }
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
-        handler(nil)
+        APIManager.shared.apiGetVehicleChargeState({
+            chargeState in
+            var text:CLKTextProvider
+            
+            guard let chargeState = chargeState else {
+                text = CLKTextProvider(format: "")
+                self._getCurrentTimelineEntry(for: complication, textProvider: text, handler: handler)
+                return
+            }
+
+            let batteryLevel:Int = chargeState["battery_level"] as? Int ?? 0
+            text = CLKTextProvider(format: "%ld %%", batteryLevel)
+            self._getCurrentTimelineEntry(for: complication, textProvider: text, handler: handler)
+        })
+        
+
+
+
+
     }
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {

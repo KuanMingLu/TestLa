@@ -89,6 +89,7 @@ class HomeViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
     func reloadCurrentState() {
         guard let currentVehicleId = currentVehicleId else {
             return

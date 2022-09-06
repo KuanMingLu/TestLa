@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
         
         loginWebView.load(request)
         loginWebView.navigationDelegate = self
-        
+        let window = UIApplication.shared.keyWindow
     }
     
   
